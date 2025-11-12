@@ -1,0 +1,167 @@
+/*==============================
+=        COLOR UTILITIES       =
+==============================*/
+
+.text-main {
+  color: #eba10e !important;
+}
+
+.primary-bg {
+  background-color: #eba10e !important;
+}
+
+.primary-bg-soft {
+  background-color: #c7bfaf !important;
+}
+
+/*==============================
+=         TYPOGRAPHY           =
+==============================*/
+
+/* Heading Font */
+.oswald {
+  font-family: 'Oswald', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Body/Content Font */
+.roboto {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+/* Text alignment */
+.text-justify {
+  text-align: justify !important;
+}
+
+/*==============================
+=         LINK STATES          =
+==============================*/
+
+.link h3:hover,
+.link:hover,
+a:hover,
+.link:hover h4,
+.nav-link:hover,
+.navlink .active,
+.nav-link:focus,
+.navbar-nav .nav-link .activate,
+.dropdown-item .activate,
+.dropdown-item:hover,
+.dropdown-item:focus,
+.widget ul li a:hover {
+  color: #eba10e !important;
+  cursor: pointer !important;
+}
+.btn:hover {
+  color: #FFF !important;
+}
+
+/*==============================
+=        HEADING STYLE         =
+==============================*/
+
+/* Icon before all h1, h2 except those using `.no-icon` */
+h1::before,
+h2::before {
+  content: url('/img/icon.webp');
+  position: relative;
+  top: 10px;
+  padding-right: 10px;
+}
+
+.no-icon h1::before,
+.no-icon h2::before,
+.cta h2::before {
+  content: none !important;
+}
+
+/* Section headings */
+section h1,
+section h2 {
+  display: flex !important;
+  align-items: center !important;
+  color: #727272 !important;
+  font-weight: bolder !important;
+  font-size: 34px !important;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Highlighted span inside headings */
+h1 span,
+h2 span {
+  color: #eba10e !important;
+  font-weight: bolder !important;
+  font-size: 34px !important;
+}
+
+/*==============================
+=          COMPONENTS          =
+==============================*/
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Topbar visibility */
+.topbar {
+  display: block;
+}
+
+/* Navbar transparent padding removal */
+.navbar-expand-lg.transparent:not(.fixed) {
+  padding: 0 !important;
+}
+
+/*==============================
+=        MISC ELEMENTS         =
+==============================*/
+
+/* Footer background */
+.footer-bg {
+  background: url('/img/bg-3.svg') no-repeat bottom left, #edf3ff;
+}
+
+/* Background styles */
+.img-bg {
+  background-image: url('/img/img-bg.webp'), url('/img/img-bg.webp');
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  padding: 15px;
+}
+.whychoose-bg {
+  background-image: url('/img/bg-1.svg');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+
+/*==============================
+=     WIDGET     =
+==============================*/
+
+.widget-title::after {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 0.2rem;
+  margin-bottom: 4px;
+  margin-left: 8px;
+  border-radius: 10px;
+  background-color: #eba10e !important;
+  border: 1px solid #eba10e;
+}
+

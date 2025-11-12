@@ -1,0 +1,62 @@
+/*======================================
+=           LARGE DEVICES (≥992px)     =
+======================================*/
+@media (min-width: 992px) {
+  /* Remove vertical padding from navbar links on large screens */
+  .nav-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/*======================================
+=       MEDIUM DEVICES (≤992px)        =
+======================================*/
+@media (max-width: 992px) {
+  /* Reduce navbar brand vertical padding */
+  .navbar-expand-lg .navbar-brand {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Set offcanvas background and text colors */
+  .offcanvas {
+    background-color: #fff !important;
+  }
+
+  /* Offcanvas nav link styles */
+  .offcanvas-nav .offcanvas-body .navbar-nav .nav-item .nav-link {
+    color: #000 !important;
+  }
+  .offcanvas-nav .offcanvas-body .navbar-nav .nav-item .nav-link:hover {
+    color: #eba10e !important;
+  }
+
+  /* Offcanvas footer text color */
+  .offcanvas-footer {
+    color: #000 !important;
+  }
+
+}
+
+/*======================================
+=        SMALL DEVICES (≤768px)        =
+======================================*/
+@media (max-width: 768px) {
+  /* Hide topbar on small screens */
+  .topbar {
+    display: none !important;
+  }
+
+  /* Fix navbar clone position */
+  .navbar-clone {
+    top: 0 !important;
+  }
+
+  /* Avoid sticky positioning conflict */
+  .sticky-wrapper {
+    position: relative !important;
+  }
+
+}
+
