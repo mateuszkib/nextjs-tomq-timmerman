@@ -3,11 +3,11 @@
 ==============================*/
 
 .text-main {
-  color: #eba10e !important;
+  color: #ff9800 !important;
 }
 
 .primary-bg {
-  background-color: #eba10e !important;
+  background-color: #ff9800 !important;
 }
 
 .primary-bg-soft {
@@ -56,11 +56,11 @@ a:hover,
 .dropdown-item:hover,
 .dropdown-item:focus,
 .widget ul li a:hover {
-  color: #eba10e !important;
+  color: #ff9800 !important;
   cursor: pointer !important;
 }
 .btn:hover {
-  color: #FFF !important;
+  color: #fff !important;
 }
 
 /*==============================
@@ -97,7 +97,7 @@ section h2 {
 /* Highlighted span inside headings */
 h1 span,
 h2 span {
-  color: #eba10e !important;
+  color: #ff9800 !important;
   font-weight: bolder !important;
   font-size: 34px !important;
 }
@@ -148,7 +148,6 @@ h2 span {
   background-repeat: no-repeat;
 }
 
-
 /*==============================
 =     WIDGET     =
 ==============================*/
@@ -161,7 +160,6 @@ h2 span {
   margin-bottom: 4px;
   margin-left: 8px;
   border-radius: 10px;
-  background-color: #eba10e !important;
-  border: 1px solid #eba10e;
+  background-color: #ff9800 !important;
+  border: 1px solid #ff9800;
 }
-

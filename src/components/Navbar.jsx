@@ -30,8 +30,7 @@ const Navbar = ({
   const router = useRouter();
 
   // Class name for fixed sticky navbar version
-  const fixedClassName =
-    'navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed';
+  const fixedClassName = 'navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed';
 
   // Navbar main content: logo, offcanvas menu, hamburger button
   const headerContent = (
@@ -40,32 +39,20 @@ const Navbar = ({
       <div className="navbar-brand w-100">
         <NextLink
           href="/"
-          title={
-            <Image
-              unoptimized={true}
-              alt="Logo | Buildify"
-              src="/img/logo.webp"
-              width={190}
-              height={70}
-            />
-          }
+          title={<Image unoptimized={true} alt="Logo | Tomq Timmerman" src="/img/logo.png" width={150} height={150} />}
         />
       </div>
 
       {/* Offcanvas navigation menu */}
-      <div
-        id="offcanvas-nav"
-        data-bs-scroll="true"
-        className="navbar-collapse offcanvas offcanvas-nav offcanvas-start"
-      >
+      <div id="offcanvas-nav" data-bs-scroll="true" className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
         {/* Offcanvas header with close button and logo, visible on small screens */}
         <div className="offcanvas-header d-lg-none offcavas-bg">
           <NextLink
             href="/"
             title={
               <Image
-                alt="Logo | Buildify"
-                src="/img/logo.webp"
+                alt="Logo | Tomq Timmerman"
+                src="/img/logo.png"
                 width={160}
                 height={60}
                 unoptimized={true}
@@ -152,15 +139,13 @@ const Navbar = ({
         {fancy ? (
           // Fancy container with background and layout tweaks
           <div className="container">
-            <div className="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-end">
+            <div className="navbar-collapse-wrapper d-flex flex-row flex-nowrap w-100 justify-content-between align-items-end">
               {headerContent}
             </div>
           </div>
         ) : (
           // Default container for navbar content
-          <div className="container flex-lg-row flex-nowrap align-items-center py-2">
-            {headerContent}
-          </div>
+          <div className="container flex-lg-row flex-nowrap align-items-center">{headerContent}</div>
         )}
       </nav>
     </Fragment>
