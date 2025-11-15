@@ -3,12 +3,7 @@ const links = [
   {
     id: 1,
     icon: 'uil uil-facebook-f',
-    url: 'https://www.facebook.com/'
-  },
-  {
-    id: 2,
-    icon: 'uil uil-linkedin',
-    url: 'https://www.linkedin.com/'
+    url: 'https://www.facebook.com/profile.php?id=61577932724535'
   }
 ];
 

@@ -14,7 +14,7 @@ const WhyChoose = () => {
       <div className="order-lg-2 col-lg-6">
         <figure className="img-bg">
           <Image
-            src="/img/transforming-residential-construction-in-gambias.webp"
+            src="/img/why-choose-us.png"
             alt="Transforming Residential Construction in Location | Buildify"
             width={600}
             height={700}
@@ -26,16 +26,8 @@ const WhyChoose = () => {
 
       {/* Text Content Section - shown first on larger screens */}
       <div className="order-lg-1 col-lg-6">
-        {/* Section label */}
-        <h3 className="fs-16 py-2 px-3 text-main d-inline rounded-pill oswald">
-          Why Choose Us ?
-        </h3>
-
         {/* Main headline */}
-        <h2 className="mb-5 mt-3 justify-content-start oswald">
-          Transforming Residential
-          <span className="ms-2"> Construction</span> in Location
-        </h2>
+        <h2 className="mb-5 mt-3 justify-content-start oswald">Dlaczego warto wybrać nas?</h2>
 
         {/* List of reasons with icons */}
         <div>
@@ -45,7 +37,7 @@ const WhyChoose = () => {
                 <div className="d-flex align-items-center">
                   {/* Check icon */}
                   <i className="uil uil-check primary-bg text-white p-1" />
-                  <h3 className="ms-2 fw-bold fs-20 oswald">{title}</h3>
+                  <h3 className="ms-2 fw-bold fs-22 oswald">{title}</h3>
                 </div>
                 <p className="text-justify roboto">{description}</p>
               </li>

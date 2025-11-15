@@ -292,7 +292,7 @@ hr.double {
   font-family: $headings-font-family;
   font-style: $headings-font-style;
   font-weight: $headings-font-weight;
-  color: $headings-color;
+  color: #ff9800;
   word-spacing: 0.1rem;
   letter-spacing: $letter-spacing;
 }
@@ -628,6 +628,7 @@ figure img {
     height: auto;
     width: 100%;
     max-width: 100%;
+    mask-size: auto auto;
     -webkit-mask-size: auto auto;
   }
   &.mask-1 img {

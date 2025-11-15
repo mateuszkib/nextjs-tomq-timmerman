@@ -2,20 +2,7 @@ import NextLink from './NextLink';
 import Image from 'next/image';
 
 const About = (props) => {
-  const {
-    heading,
-    headingH1,
-    subHeading,
-    para,
-    para2,
-    para3,
-    imgPosition,
-    src,
-    btnTitle,
-    btnUrl,
-    video,
-    span,
-  } = props;
+  const { heading, headingH1, subHeading, para, para2, para3, imgPosition, src, btnTitle, btnUrl, video, span } = props;
 
   // Conditionally render video or image
   const renderMedia = () => {
@@ -35,8 +22,7 @@ const About = (props) => {
         <Image
           alt={`${headingH1 || heading} ${span} | Buildify`}
           src={src}
-          width={600}
-          height={700}
+          fill
           unoptimized
           className="position-static"
         />
@@ -47,17 +33,15 @@ const About = (props) => {
   return (
     <div className="row gx-lg-8 align-items-center">
       {/* Media Section (Image or Video) */}
-      <div className={`${imgPosition === 'right' ? 'order-lg-2' : 'order-lg-1'} col-lg-6`}>
+      <div className={`${imgPosition === 'right' ? 'order-lg-2' : 'order-lg-1'} col-lg-7`}>
         <figure className="img-bg">{renderMedia()}</figure>
       </div>
 
       {/* Content Section */}
-      <div className={`${imgPosition === 'right' ? 'order-lg-1' : 'order-lg-2'} col-lg-6`}>
+      <div className={`${imgPosition === 'right' ? 'order-lg-1' : 'order-lg-2'} col-lg-5`}>
         {/* Optional Subheading Badge */}
         {subHeading && (
-          <h3 className="fs-15 py-2 px-3 primary-bg-soft text-main d-inline rounded-pill oswald">
-            {subHeading}
-          </h3>
+          <h3 className="fs-15 py-2 px-3 primary-bg-soft text-main d-inline rounded-pill oswald">{subHeading}</h3>
         )}
 
         {/* Heading H1 with Optional Span */}
@@ -84,11 +68,7 @@ const About = (props) => {
         {/* Optional Button */}
         {btnTitle && btnUrl && (
           <div className="mt-5">
-            <NextLink
-              title={btnTitle}
-              href={btnUrl}
-              className="btn btn-md bg-primary text-white rounded"
-            />
+            <NextLink title={btnTitle} href={btnUrl} className="btn btn-md bg-primary text-white rounded" />
           </div>
         )}
       </div>

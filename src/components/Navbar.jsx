@@ -74,16 +74,13 @@ const Navbar = ({
           <ul className="navbar-nav align-items-lg-center">
             {/* Each nav item closes offcanvas on click */}
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="/" title="Home" className="nav-link" />
+              <NextLink href="/" title="Strona główna" className="nav-link" />
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#" title="About Us" className="nav-link" />
+              <NextLink href="#" title="O nas" className="nav-link" />
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#" title="Projects" className="nav-link" />
-            </li>
-            <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#" title="Contact Us" className="nav-link" />
+              <NextLink href="#" title="Realizacje" className="nav-link" />
             </li>
           </ul>
 

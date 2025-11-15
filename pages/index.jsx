@@ -15,12 +15,14 @@ const Home = () => {
 
       {/* Meta Information */}
       <Head>
-        <title>Buildify – Free Next.js Website Template for Contractors, Builders & Construction Companies</title>
-        <meta name="description" content="Free Next.js website template for builders, contractors & construction firms – built with Bootstrap" />
+        <title>Tomq Timmerman – Free Next.js Website Template for Contractors, Builders & Construction Companies</title>
+        <meta
+          name="description"
+          content="Free Next.js website template for builders, contractors & construction firms – built with Bootstrap"
+        />
       </Head>
 
       <main className="content-wrapper overflow-hidden">
-
         {/* Hero Section */}
         <Hero />
 
@@ -28,19 +30,19 @@ const Home = () => {
         <section className="wrapper">
           <div className="container py-12 py-md-14">
             <About
-              headingH1="Welcome to "
-              span="Buildify"
-              para="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati odit fuga, velit cum temporibus autem soluta mollitia saepe porro..."
-              para2="Excepturi accusamus delectus velit consequuntur! Eum quod modi velit aut molestias, cum animi voluptates eaque!"
+              headingH1="Witamy w "
+              span="Tomq Timmerman"
+              para="Od lat specjalizujemy się w profesjonalnym montażu oraz wymianie okien, drzwi i schodów. Nasza firma łączy doświadczenie z nowoczesnymi rozwiązaniami, zapewniając najwyższą jakość usług i trwałość na lata."
+              para2="Stawiamy na indywidualne podejście do każdego klienta, oferując fachowe doradztwo, precyzyjny montaż oraz szeroki wybór produktów renomowanych producentów. Z nami Twój dom zyska nowy wymiar komfortu i bezpieczeństwa!"
               imgPosition="left"
-              src="/img/welcome-to-constructions.webp"
+              src="/img/welcome-to-tomq-timmerman.png"
             />
           </div>
         </section>
 
         {/* Why Choose Us */}
-        <section className="wrapper whychoose-bg">
-          <div className="container py-14 py-md-16">
+        <section className="wrapper why-choose-wrapper">
+          <div className="container py-7">
             <WhyChoose />
           </div>
         </section>
