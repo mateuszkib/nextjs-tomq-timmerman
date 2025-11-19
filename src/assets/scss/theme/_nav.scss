@@ -4,6 +4,7 @@
 .nav-link {
   --#{$prefix}nav-link-font-weight: #{$nav-link-font-weight};
   letter-spacing: $letter-spacing;
+  color: #e46e12;
   p {
     @include font-size($font-size-base);
   }
