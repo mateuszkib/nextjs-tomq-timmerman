@@ -39,7 +39,7 @@ const Navbar = ({
       <div className="navbar-brand w-100">
         <NextLink
           href="/"
-          title={<Image unoptimized={true} alt="Logo | Tomq Timmerman" src="/img/logo.png" width={150} height={150} />}
+          title={<Image unoptimized={true} alt="Logo | Tomq Timmerman" src="/img/logo.png" width={125} height={125} />}
         />
       </div>
 
@@ -53,8 +53,8 @@ const Navbar = ({
               <Image
                 alt="Logo | Tomq Timmerman"
                 src="/img/logo.png"
-                width={160}
-                height={60}
+                width={90}
+                height={90}
                 unoptimized={true}
                 data-bs-dismiss="offcanvas"
               />
@@ -90,7 +90,7 @@ const Navbar = ({
               <div className="d-flex align-items-center mb-5">
                 <i className="uil uil-envelope fs-32 text-main bg-white rounded-circle me-2" />
                 <p className="fs-16 text-center m-0">
-                  <a href="mailto:buildify@gmail.com">buildify@gmail.com</a>
+                  <a href="mailto:tomqtimmerman@gmail.com">tomqtimmerman@gmail.com</a>
                 </p>
               </div>
               <div className="d-flex mb-5">

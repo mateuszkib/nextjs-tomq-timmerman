@@ -34,7 +34,7 @@ const Footer = () => {
               <div className="mb-2 d-flex justify-content-md-center justify-content-xxl-start w-100">
                 <Image
                   src="/img/logo.png"
-                  alt="Logo | Buildify"
+                  alt="Logo | Tomq Timmerman"
                   width={100}
                   height={100}
                   unoptimized={true} // Prevents Next.js image optimization
@@ -73,7 +73,7 @@ const Footer = () => {
               {/* Email */}
               <div className="d-flex gap-2 mb-3 align-items-center">
                 <i className="uil uil-envelope fs-26 text-main" />
-                <a href="mailto:buildify@gmail.com" className="link-body roboto">
+                <a href="mailto:tomqtimmerman@gmail.com" className="link-body roboto">
                   loremipsum@gmail.com
                 </a>
               </div>

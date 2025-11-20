@@ -15,10 +15,10 @@ const Home = () => {
 
       {/* Meta Information */}
       <Head>
-        <title>Tomq Timmerman – Free Next.js Website Template for Contractors, Builders & Construction Companies</title>
+        <title>Tomq Timmerman</title>
         <meta
           name="description"
-          content="Free Next.js website template for builders, contractors & construction firms – built with Bootstrap"
+          content="Professional installation and replacement of windows, doors, and stairs. Experienced team, modern solutions, and a customer-focused approach. Enhance the comfort and safety of your home with Tomq Timmerman."
         />
       </Head>
 

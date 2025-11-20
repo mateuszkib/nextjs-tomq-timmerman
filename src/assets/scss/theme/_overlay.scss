@@ -265,6 +265,7 @@ figure.overlay img {
 }
 .hover-scale {
   overflow: hidden;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   transform: translateY(0);
@@ -305,6 +306,7 @@ figure.overlay img {
   color: $white;
 }
 .lift {
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   transform: translateY(0);

@@ -15,7 +15,7 @@ const WhyChoose = () => {
         <figure className="img-bg">
           <Image
             src="/img/why-choose-us.png"
-            alt="Transforming Residential Construction in Location | Buildify"
+            alt="Transforming Residential Construction in Location | Tomq Timmerman"
             width={600}
             height={700}
             unoptimized={true} // disables Next.js optimization for this image

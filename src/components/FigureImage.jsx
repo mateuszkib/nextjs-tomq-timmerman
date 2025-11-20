@@ -3,7 +3,7 @@ import Image from 'next/image';
 /**
  * FigureImage component wraps Next.js Image inside a <figure> element.
  * It ensures responsive width and preserves aspect ratio.
- * 
+ *
  * @param {Object} props
  * @param {string} props.className - CSS classes for the <figure> wrapper
  * @param {string} props.src - Image source URL/path
@@ -19,13 +19,13 @@ const FigureImage = (props) => {
     <figure className={className} {...others}>
       <Image
         src={src}
-        alt="Page Not Found | Buildify"  // Provide meaningful alt text or consider passing as prop
+        alt="Page Not Found | Tomq Timmerman" // Provide meaningful alt text or consider passing as prop
         width={width}
         height={height}
         unoptimized={true} // Disable optimization (useful for external or dynamic images)
         style={{
-          width: '100%',  // Responsive width
-          height: 'auto'  // Maintain aspect ratio
+          width: '100%', // Responsive width
+          height: 'auto' // Maintain aspect ratio
         }}
       />
     </figure>

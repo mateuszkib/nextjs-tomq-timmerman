@@ -113,6 +113,11 @@
         .navbar-brand {
           padding-top: 1.2rem;
           padding-bottom: 1.2rem;
+
+            img {
+              width: 100px;
+              height: 100px;
+            }
         }
         &.fancy .navbar-collapse-wrapper {
           background: none !important;

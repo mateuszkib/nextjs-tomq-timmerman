@@ -20,7 +20,7 @@ const About = (props) => {
     } else {
       return (
         <Image
-          alt={`${headingH1 || heading} ${span} | Buildify`}
+          alt={`${headingH1 || heading} ${span} | Tomq Timmerman`}
           src={src}
           fill
           unoptimized
