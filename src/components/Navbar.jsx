@@ -4,6 +4,7 @@ import useSticky from 'hooks/useSticky';
 import Image from 'next/image.js';
 import NextLink from 'components/NextLink';
 import SocialLinks from 'components/SocialLinks';
+import { getTranslations } from 'i18n/translations';
 
 /**
  * Navbar component with sticky behavior, offcanvas menu, and responsive layout.
@@ -26,8 +27,27 @@ const Navbar = ({
   // Ref to navbar DOM element, used to get height for sticky padding
   const navbarRef = useRef(null);
 
-  // Next.js router (not used here but available if needed)
   const router = useRouter();
+  const { locale, asPath, pathname } = router;
+  const t = getTranslations(locale);
+  const languageOptions = ['pl', 'en', 'nl'];
+  const navItems = [
+    { href: '/#start', title: t.nav.home },
+    { href: '/#about', title: t.nav.about },
+    { href: '/#why-us', title: t.nav.whyChoose },
+    { href: '/realization', title: t.nav.realizations },
+    { href: '/#contact', title: t.nav.contact }
+  ];
+  const languageFlags = {
+    pl: '/img/flags/pl.svg',
+    en: '/img/flags/gb.svg',
+    nl: '/img/flags/nl.svg'
+  };
+
+  const changeLanguage = (nextLocale) => {
+    if (nextLocale === locale) return;
+    router.push(pathname, asPath, { locale: nextLocale });
+  };
 
   // Class name for fixed sticky navbar version
   const fixedClassName = 'navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed';
@@ -35,7 +55,6 @@ const Navbar = ({
   // Navbar main content: logo, offcanvas menu, hamburger button
   const headerContent = (
     <Fragment>
-      {/* Navbar brand/logo */}
       <div className="navbar-brand w-100">
         <NextLink
           href="/"
@@ -43,9 +62,7 @@ const Navbar = ({
         />
       </div>
 
-      {/* Offcanvas navigation menu */}
       <div id="offcanvas-nav" data-bs-scroll="true" className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-        {/* Offcanvas header with close button and logo, visible on small screens */}
         <div className="offcanvas-header d-lg-none offcavas-bg">
           <NextLink
             href="/"
@@ -68,23 +85,59 @@ const Navbar = ({
           />
         </div>
 
-        {/* Offcanvas body containing navigation links and contact info */}
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100 offcavas-bg">
-          {/* Navigation links */}
           <ul className="navbar-nav align-items-lg-center">
-            {/* Each nav item closes offcanvas on click */}
-            <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="/" title="Strona główna" className="nav-link" />
-            </li>
-            <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#" title="O nas" className="nav-link" />
-            </li>
-            <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#" title="Realizacje" className="nav-link" />
+            {navItems.map(({ href, title }) => (
+              <li key={href} className="nav-item" data-bs-dismiss="offcanvas">
+                <NextLink href={href} title={title} className="nav-link" />
+              </li>
+            ))}
+
+            <li className="nav-item dropdown language-select">
+              <button
+                type="button"
+                className="nav-link dropdown-toggle border-0 bg-transparent p-0 d-flex align-items-center"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-label={t.nav.languageLabel}
+              >
+                <span className="ms-2 d-none d-lg-inline d-flex align-items-center text-uppercase">
+                  <Image
+                    src={languageFlags[locale || 'pl']}
+                    alt={`${t.languageSwitcher[locale || 'pl']} flag`}
+                    width={18}
+                    height={12}
+                    unoptimized={true}
+                  />
+                  <span className="ms-2">{t.languageSwitcher[locale || 'pl']}</span>
+                </span>
+              </button>
+
+              <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow">
+                {languageOptions.map((lang) => (
+                  <li key={lang}>
+                    <button
+                      type="button"
+                      onClick={() => changeLanguage(lang)}
+                      className={`dropdown-item text-uppercase ${locale === lang ? 'active fw-bold' : ''}`}
+                      data-bs-dismiss="offcanvas"
+                    >
+                      <Image
+                        src={languageFlags[lang]}
+                        alt={`${t.languageSwitcher[lang]} flag`}
+                        width={18}
+                        height={12}
+                        unoptimized={true}
+                        className="me-2"
+                      />
+                      {t.languageSwitcher[lang]}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </li>
           </ul>
 
-          {/* Offcanvas footer with contact info and social links (mobile only) */}
           <div className="offcanvas-footer d-lg-none">
             <div>
               <div className="d-flex align-items-center mb-5">

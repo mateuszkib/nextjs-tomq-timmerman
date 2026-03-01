@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 export default class SandBox extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pl">
         <Head>
           {/* Favicon and icons for different platforms */}
           <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
@@ -13,7 +13,10 @@ export default class SandBox extends Document {
           <link rel="manifest" href="/img/favicon/site.webmanifest" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           {/* Main React app content will be injected here */}
@@ -33,7 +36,7 @@ SandBox.getInitialProps = async (ctx) => {
   // Enhance app/component rendering if needed
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => App,               // You can wrap your App component here
+      enhanceApp: (App) => App, // You can wrap your App component here
       enhanceComponent: (Component) => Component // You can wrap individual components here
     });
 

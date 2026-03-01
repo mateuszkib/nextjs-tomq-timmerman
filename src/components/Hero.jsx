@@ -1,12 +1,16 @@
-import NextLink from './NextLink';
+import { useRouter } from 'next/router';
+import { getTranslations } from 'i18n/translations';
 
 /**
  * Hero component - displays a fullscreen hero section with background image,
  * headline, subheadline, and a call-to-action button.
  */
 const Hero = () => {
+  const { locale } = useRouter();
+  const t = getTranslations(locale);
+
   return (
-    <section>
+    <section id="start">
       {/* Hero container with background image and styling */}
       <div
         className="swiper-container hero"
@@ -20,14 +24,14 @@ const Hero = () => {
       >
         {/* Overlay for darkening the background image */}
         <div className="overlay"></div>
-        <div class="hero-content">
+        <div className="hero-content">
           <div>
-            <h1>Okna. Drzwi. Schody.</h1>
-            <p>Profesjonalny montaż oraz wymiana.</p>
+            <h1>{t.hero.title}</h1>
+            <p>{t.hero.subtitle}</p>
           </div>
           <div>
-            <a href="#kontakt" class="hero-cta">
-              Umów wycenę
+            <a href="#contact" className="hero-cta">
+              {t.hero.cta}
             </a>
           </div>
         </div>

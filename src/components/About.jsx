@@ -23,6 +23,7 @@ const About = (props) => {
           alt={`${headingH1 || heading} ${span} | Tomq Timmerman`}
           src={src}
           fill
+          sizes="(max-width: 992px) 100vw, 58vw"
           unoptimized
           className="position-static"
         />

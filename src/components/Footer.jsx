@@ -1,7 +1,8 @@
 import NextLink from 'components/NextLink';
 import SocialLinks from 'components/SocialLinks';
 import Image from 'next/image';
-import { usefulLinks } from '../data.js';
+import { useRouter } from 'next/router';
+import { getTranslations } from 'i18n/translations';
 
 /**
  * Widget component renders a titled list of links
@@ -23,9 +24,11 @@ const Widget = ({ list, title }) => (
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { locale } = useRouter();
+  const t = getTranslations(locale);
 
   return (
-    <footer className="border-top footer-bg overflow-hidden">
+    <footer id="contact" className="border-top footer-bg overflow-hidden">
       <div className="container pt-10 pt-md-12 pb-7">
         <div className="row gx-10 justify-content-around">
           {/* Logo and Company Description */}
@@ -41,11 +44,7 @@ const Footer = () => {
                   className="text-center"
                 />
               </div>
-              <p className="lead mb-2 text-md-center text-xl-start fs-16 roboto">
-                Tomq Timmerman to zaufana firma specjalizująca się w montażu i wymianie okien, drzwi oraz schodów.
-                Oferujemy nowoczesne, trwałe i wysokiej jakości rozwiązania, które podnoszą komfort oraz bezpieczeństwo
-                Twojego domu.
-              </p>
+              <p className="lead mb-2 text-md-center text-xl-start fs-16 roboto">{t.footer.companyDescription}</p>
             </div>
 
             {/* Social Media Links */}
@@ -56,13 +55,13 @@ const Footer = () => {
 
           {/* Quick Links Widget */}
           <div className="col-md-6 col-xl-3 mt-md-5 mt-xl-0 mt-10 justify-content-md-center d-flex">
-            <Widget list={usefulLinks} title="Linki" />
+            <Widget list={t.footer.usefulLinks} title={t.footer.usefulLinksTitle} />
           </div>
 
           {/* Contact Information Widget */}
           <div className="col-md-6 col-xl-3 mt-md-5 mt-xl-0 mt-10 justify-content-md-center d-flex">
             <div className="widget">
-              <h4 className="widget-title fs-18 mb-3 text-uppercase oswald">Kontakt</h4>
+              <h4 className="widget-title fs-18 mb-3 text-uppercase oswald">{t.footer.contactTitle}</h4>
 
               {/* Address */}
               <div className="d-flex gap-2 mb-3 align-items-center">
@@ -91,16 +90,16 @@ const Footer = () => {
           {/* Embedded Google Map */}
           <div className="col-xl-3 mt-md-5 mt-xl-0 mt-10 justify-content-md-center d-flex">
             <div className="widget">
-              <h4 className="widget-title fs-18 mb-3 text-uppercase oswald">Google Map</h4>
+              <h4 className="widget-title fs-18 mb-3 text-uppercase oswald">{t.footer.mapTitle}</h4>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78587.60164329741!2d4.349728492468634!3d52.00938247302669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5ca3bc61e6c2b%3A0x11a2b3b894a121f1!2sPijnacker%2C%20Holandia!5e0!3m2!1spl!2spl!4v1763247274075!5m2!1spl!2spl"
                 width="300"
                 height="250"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map Location"
+                title={t.footer.mapTitleAttr}
               />
             </div>
           </div>
@@ -110,7 +109,9 @@ const Footer = () => {
 
           {/* Footer copyright */}
           <div className="d-md-flex align-items-center justify-content-center">
-            <p className="mb-2 mb-lg-0 text-center roboto">© {currentYear} Tomq Timmerman. All rights reserved</p>
+            <p className="mb-2 mb-lg-0 text-center roboto">
+              © {currentYear} Tomq Timmerman. {t.footer.rights}
+            </p>
           </div>
         </div>
       </div>

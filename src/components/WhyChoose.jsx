@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { whyChoose } from '../data';
+import { useRouter } from 'next/router';
+import { getTranslations } from 'i18n/translations';
 
 /**
  * WhyChoose component - displays a section highlighting reasons to choose the company,
@@ -8,6 +9,9 @@ import { whyChoose } from '../data';
  * @returns JSX.Element
  */
 const WhyChoose = () => {
+  const { locale } = useRouter();
+  const t = getTranslations(locale);
+
   return (
     <div className="row gx-lg-8 align-items-center">
       {/* Image Section - shown on larger screens second */}
@@ -15,7 +19,7 @@ const WhyChoose = () => {
         <figure className="img-bg">
           <Image
             src="/img/why-choose-us.png"
-            alt="Transforming Residential Construction in Location | Tomq Timmerman"
+            alt={t.whyChoose.imageAlt}
             width={600}
             height={700}
             unoptimized={true} // disables Next.js optimization for this image
@@ -27,12 +31,12 @@ const WhyChoose = () => {
       {/* Text Content Section - shown first on larger screens */}
       <div className="order-lg-1 col-lg-6">
         {/* Main headline */}
-        <h2 className="mb-5 mt-3 justify-content-start oswald">Dlaczego warto wybrać nas?</h2>
+        <h2 className="mb-5 mt-3 justify-content-start oswald">{t.whyChoose.heading}</h2>
 
         {/* List of reasons with icons */}
         <div>
           <ul className="icon-list bullet-bg mb-0">
-            {whyChoose.map(({ id, title, description }) => (
+            {t.whyChoose.items.map(({ id, title, description }) => (
               <li key={id}>
                 <div className="d-flex align-items-center">
                   {/* Check icon */}

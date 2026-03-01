@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Fragment, useEffect, useState } from 'react';
 import ThemeProvider from 'theme/ThemeProvider';
 import Layout from 'components/Layout';
+import { getTranslations } from 'i18n/translations';
 
 // Import global styles and third-party CSS
 import 'animate.css';
@@ -12,8 +13,9 @@ import 'plugins/scrollcue/scrollCue.css';
 import 'assets/scss/style.scss';
 
 function MyApp({ Component, pageProps }) {
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
   const [loading, setLoading] = useState(true);
+  const t = getTranslations(locale);
 
   // Dynamically import Bootstrap JS on client-side only (to avoid SSR issues)
   useEffect(() => {
@@ -38,6 +40,12 @@ function MyApp({ Component, pageProps }) {
     setLoading(false);
   }, []);
 
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = locale || 'pl';
+    }
+  }, [locale]);
+
   return (
     <Fragment>
       <Head>
@@ -45,22 +53,13 @@ function MyApp({ Component, pageProps }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>
-          Professional installation and replacement of windows, doors, and stairs. Experienced team, modern solutions,
-          and a customer-focused approach. Enhance the comfort and safety of your home with Tomq Timmerman.
-        </title>
-        <meta
-          name="description"
-          content="Professional installation and replacement of windows, doors, and stairs. Experienced team, modern solutions, and a customer-focused approach. Enhance the comfort and safety of your home with Tomq Timmerman."
-        />
+        <title>{t.app.metaTitle}</title>
+        <meta name="description" content={t.app.metaDescription} />
 
         {/* Open Graph tags for social sharing */}
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Tomq Timmerman – Professional installation and replacement of windows, doors, and stairs. Experienced team, modern solutions, and a customer-focused approach. Enhance the comfort and safety of your home with Tomq Timmerman."
-        />
-        <meta property="og:description" content="" />
+        <meta property="og:title" content={t.app.ogTitle} />
+        <meta property="og:description" content={t.app.metaDescription} />
         {/* TODO: Replace with your actual website URL */}
         <meta property="og:url" content="https://themixly.com/preview/192/construction-company-react-nextjs-template" />
         {/* TODO: Replace with your actual image URL */}
