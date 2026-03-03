@@ -21,12 +21,8 @@ const Navbar = ({
   fancy = false,
   stickyBox = true
 }) => {
-  // Track if navbar should be sticky based on scroll position
   const sticky = useSticky(350);
-
-  // Ref to navbar DOM element, used to get height for sticky padding
   const navbarRef = useRef(null);
-
   const router = useRouter();
   const { locale, asPath, pathname } = router;
   const t = getTranslations(locale);
