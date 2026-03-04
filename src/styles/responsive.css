@@ -32,6 +32,25 @@
     color: #ff9800 !important;
   }
 
+  /* Mobile language dropdown readability in offcanvas */
+  .offcanvas-nav .offcanvas-body .navbar-nav .language-select .dropdown-menu {
+    background-color: #fff !important;
+    position: static !important;
+    transform: none !important;
+    margin-top: 8px !important;
+    border: 1px solid #e9e9e9 !important;
+  }
+
+  .offcanvas-nav .offcanvas-body .navbar-nav .language-select .dropdown-item {
+    color: #000 !important;
+  }
+
+  .offcanvas-nav .offcanvas-body .navbar-nav .language-select .dropdown-item:hover,
+  .offcanvas-nav .offcanvas-body .navbar-nav .language-select .dropdown-item:focus,
+  .offcanvas-nav .offcanvas-body .navbar-nav .language-select .dropdown-item.active {
+    color: #ff9800 !important;
+  }
+
   /* Offcanvas footer text color */
   .offcanvas-footer {
     color: #000 !important;

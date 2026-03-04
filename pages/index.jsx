@@ -37,7 +37,7 @@ const Home = () => {
               para={t.home.aboutParagraph1}
               para2={t.home.aboutParagraph2}
               imgPosition="left"
-              src="/img/welcome-to-tomq-timmerman.png"
+              src="/img/welcome-to-tomq-timmerman.jpeg"
             />
           </div>
         </section>

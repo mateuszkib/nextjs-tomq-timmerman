@@ -89,7 +89,7 @@ const Navbar = ({
               </li>
             ))}
 
-            <li className="nav-item dropdown language-select">
+            <li className="nav-item dropdown language-select mt-2 mt-lg-0">
               <button
                 type="button"
                 className="nav-link dropdown-toggle border-0 bg-transparent p-0 d-flex align-items-center"
@@ -97,7 +97,7 @@ const Navbar = ({
                 aria-expanded="false"
                 aria-label={t.nav.languageLabel}
               >
-                <span className="ms-2 d-none d-lg-inline d-flex align-items-center text-uppercase">
+                <span className="ms-3 d-flex align-items-center text-uppercase">
                   <Image
                     src={languageFlags[locale || 'pl']}
                     alt={`${t.languageSwitcher[locale || 'pl']} flag`}
@@ -109,13 +109,15 @@ const Navbar = ({
                 </span>
               </button>
 
-              <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow">
+              <ul className="dropdown-menu dropdown-menu-end shadow mt-2">
                 {languageOptions.map((lang) => (
                   <li key={lang}>
                     <button
                       type="button"
                       onClick={() => changeLanguage(lang)}
-                      className={`dropdown-item text-uppercase ${locale === lang ? 'active fw-bold' : ''}`}
+                      className={`dropdown-item d-flex align-items-center gap-2 text-uppercase ${
+                        locale === lang ? 'active fw-bold' : 'text-dark'
+                      }`}
                       data-bs-dismiss="offcanvas"
                     >
                       <Image
